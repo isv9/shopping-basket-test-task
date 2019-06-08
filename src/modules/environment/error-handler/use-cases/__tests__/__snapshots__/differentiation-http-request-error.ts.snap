@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`defineHttpRequestError with undefined 1`] = `[NotFoundObjectError: Not found 'server error']`;
+
+exports[`defineHttpRequestErrorByStatus with 400 status 1`] = `[BusinessError: test error message]`;
+
+exports[`defineHttpRequestErrorByStatus without status 1`] = `[NotFoundObjectError: Not found 'status server error']`;

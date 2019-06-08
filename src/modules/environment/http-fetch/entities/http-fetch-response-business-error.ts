@@ -1,0 +1,1 @@
+export type HttpFetchResponseBusinessError = { error: string; type: string };

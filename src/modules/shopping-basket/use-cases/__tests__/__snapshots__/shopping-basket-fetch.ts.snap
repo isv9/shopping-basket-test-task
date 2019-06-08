@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShoppingBasketFetch addOrder: post calls 1`] = `
+Array [
+  Array [
+    "/shopping-basket/order",
+    Object {},
+  ],
+]
+`;
+
+exports[`ShoppingBasketFetch addOrderedItemToShoppingBasket: post calls 1`] = `
+Array [
+  Array [
+    "/shopping-basket/ordered-item",
+    Object {
+      "orderedItemId": "test id",
+    },
+  ],
+]
+`;
+
+exports[`ShoppingBasketFetch adjustOrderedItemInShoppingBasket: post calls 1`] = `
+Array [
+  Array [
+    "/shopping-basket/ordered-item/test id",
+    Object {
+      "adjustmentValue": 4,
+      "orderedItemId": "test id",
+    },
+  ],
+]
+`;
+
+exports[`ShoppingBasketFetch getCurrentShoppingBasket: get calls 1`] = `
+Array [
+  Array [
+    "/shopping-basket",
+  ],
+]
+`;
+
+exports[`ShoppingBasketFetch removeOrderedItemFromShoppingBasket: delete calls 1`] = `
+Array [
+  Array [
+    "/shopping-basket/ordered-item/test id",
+    Object {
+      "orderedItemId": "test id",
+    },
+  ],
+]
+`;

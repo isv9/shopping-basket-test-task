@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShoppingMenuFetch getShoppingMenuDictionary 1`] = `
+Map {
+  "m1" => Object {
+    "id": "m1",
+    "name": "menu item 1",
+  },
+}
+`;
+
+exports[`ShoppingMenuFetch getShoppingMenuDictionary: get calls 1`] = `
+Array [
+  Array [
+    "/shopping-menu",
+  ],
+]
+`;
