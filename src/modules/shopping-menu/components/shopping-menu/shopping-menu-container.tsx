@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
-import {ShoppingMenuItem, ShoppingMenuItemId} from "../../entities/shopping-menu-item";
+import React from "react";
 import {BasketContext} from "../../../shopping-basket/gateways/basket-context";
-import {getShoppingMenuDictionaryEffectCallback} from "../../../core/effects/get-shopping-menu-dictionary";
+import {useGettingShoppingMenuDictionary} from "../../../core/effects/getting-shopping-menu-dictionary";
 import {ShoppingMenu} from "./shopping-menu";
 
 interface ShoppingMenuContainerProps {
@@ -14,10 +13,7 @@ export const ShoppingMenuContainer: React.FC<ShoppingMenuContainerProps> = (prop
         shoppingMenuStyle
     } = props;
 
-    const [shoppingMenuDictionary, setShoppingMenuDictionary] =
-        useState(new Map<ShoppingMenuItemId, ShoppingMenuItem>());
-
-    useEffect(getShoppingMenuDictionaryEffectCallback(setShoppingMenuDictionary), []);
+    const shoppingMenuDictionary = useGettingShoppingMenuDictionary();
 
     return (<BasketContext.Consumer>
         {({
