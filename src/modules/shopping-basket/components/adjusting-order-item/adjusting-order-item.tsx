@@ -6,20 +6,20 @@ import {shoppingBasketAdjustingOrderedItemCountStyles as styles} from "./styles"
 interface ShoppingBasketAdjustingOrderedItemProps {
     value: number;
 
-    adjust(adjustmentValue: number): void;
+    onAdjust(adjustmentValue: number): void;
 }
 
 export const ShoppingBasketAdjustingOrderedItemCount
     : React.FC<ShoppingBasketAdjustingOrderedItemProps> = (props) => {
 
     const {
-        adjust,
+        onAdjust,
         value,
     } = props;
 
     return (<div className={css(styles.container)}>
-        <Button style={styles.button} onClick={() => adjust(-1)}>-</Button>
+        <Button style={styles.button} onClick={() => onAdjust(-1)}>-</Button>
         <span className={css(styles.adjustLabel)}>{value}</span>
-        <Button style={styles.button} onClick={() => adjust(1)}>+</Button>
+        <Button style={styles.button} onClick={() => onAdjust(1)}>+</Button>
     </div>);
 };

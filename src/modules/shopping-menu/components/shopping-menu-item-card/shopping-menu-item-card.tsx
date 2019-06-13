@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {ShoppingBasketAdjustingOrderedItemCount} from "../../../shopping-basket/components/adjusting-order-item/adjusting-order-item";
 import {ShoppingMenuItem as MenuItemModel} from "../../entities/shopping-menu-item";
 import {css} from "aphrodite/no-important";
@@ -30,12 +30,18 @@ export const ShoppingMenuItemCard: React.FC<ShoppingMenuItemCardProps> = (props)
         name,
     } = menuItem;
 
+    const onAdjust = useCallback((adjustmentValue: number) => adjustOrderedItem(menuItemId, adjustmentValue),
+        [menuItemId, adjustOrderedItem]);
+
+    const onAddMenuItem = useCallback(() => addMenuItem(menuItemId),
+        [menuItemId, addMenuItem]);
+
     const action = orderCount
         ? <ShoppingBasketAdjustingOrderedItemCount
             value={orderCount}
-            adjust={(adjustmentValue) => adjustOrderedItem(menuItemId, adjustmentValue)}/>
+            onAdjust={onAdjust}/>
         :
-        <Button onClick={() => addMenuItem(menuItemId)}>Add</Button>;
+        <Button onClick={onAddMenuItem}>Add</Button>;
 
     return (<section className={css(styles.container, style)}>
         <div className={css(styles.iconContainer)}>

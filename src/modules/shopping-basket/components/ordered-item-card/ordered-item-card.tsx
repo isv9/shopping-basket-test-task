@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {OrderedItemViewModel} from "../../entities/ordered-item-view-model";
 import {ShoppingBasketAdjustingOrderedItemCount} from "../adjusting-order-item/adjusting-order-item";
 import {css} from "aphrodite/no-important";
@@ -28,7 +28,8 @@ export const ShoppingBasketOrderedItemCard: React.FC<ShoppingBasketOrderedItemCa
         orderedCount
     } = orderItem;
 
-    const adjust = (adjustmentValue: number) => adjustOrderedItem(itemId, adjustmentValue);
+    const onAdjust = useCallback((adjustmentValue: number) => adjustOrderedItem(itemId, adjustmentValue),
+        [itemId, adjustOrderedItem]);
 
     return (<section className={css(styles.container, style)}>
         <div className={css(styles.nameContainer)}>
@@ -37,7 +38,7 @@ export const ShoppingBasketOrderedItemCard: React.FC<ShoppingBasketOrderedItemCa
         <div className={css(styles.adjustContainer)}>
             {!!orderedCount && <ShoppingBasketAdjustingOrderedItemCount
                 value={orderedCount}
-                adjust={adjust}/>}
+                onAdjust={onAdjust}/>}
         </div>
         <div className={css(styles.container)}>
             <button onClick={() => removeOrderedItem(itemId)}
