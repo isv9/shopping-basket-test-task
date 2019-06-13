@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import {ShoppingMenuItem, ShoppingMenuItemId} from "../../shopping-menu/entities/shopping-menu-item";
-import {errorHandler} from "../../environment/error-handler/services/error-handler";
-import {createShoppingMenuFetch} from "../../shopping-menu/services/shopping-menu-fetch";
+import {ShoppingMenuItem, ShoppingMenuItemId} from "modules/shopping-menu/entities/shopping-menu-item";
+import {createShoppingMenuFetch} from "modules/shopping-menu/services/shopping-menu-fetch";
+import {errorHandler} from "modules/environment/error-handler/services/error-handler";
 
 export function useGettingShoppingMenuDictionary(): Map<ShoppingMenuItemId, ShoppingMenuItem> {
 

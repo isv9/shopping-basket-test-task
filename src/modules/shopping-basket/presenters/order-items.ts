@@ -1,6 +1,6 @@
-import {OrderedItemViewModel} from "../entities/ordered-item-view-model";
-import {OrderedItem} from "../entities/ordered-item";
-import {ShoppingMenuItem} from "../../shopping-menu/entities/shopping-menu-item";
+import {OrderedItem} from "modules/shopping-basket/entities/ordered-item";
+import {ShoppingMenuItem} from "modules/shopping-menu/entities/shopping-menu-item";
+import {OrderedItemViewModel} from "modules/shopping-basket/entities/ordered-item-view-model";
 
 export function mapShoppingBasketOrderedItemsViewModel(orderedItems: Array<OrderedItem>,
                                                        shoppingMenuDictionary: Map<string, ShoppingMenuItem>)

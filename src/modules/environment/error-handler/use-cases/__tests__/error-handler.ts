@@ -1,6 +1,6 @@
-import {ErrorHandler} from "../error-handler";
-import {NotificationService} from "../../../notification/notification";
-import {NetworkError} from "../../entities/network-error";
+import {ErrorHandler} from "modules/environment/error-handler/use-cases/error-handler";
+import {NotificationService} from "modules/environment/notification/notification";
+import {NetworkError} from "modules/environment/error-handler/entities/network-error";
 
 describe('ErrorHandler', () => {
 

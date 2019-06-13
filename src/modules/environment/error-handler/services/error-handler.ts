@@ -1,5 +1,5 @@
-import {notificationService} from "../../notification/notification";
-import {ErrorHandler} from "../use-cases/error-handler";
+import {ErrorHandler} from "modules/environment/error-handler/use-cases/error-handler";
+import {notificationService} from "modules/environment/notification/notification";
 
 export const errorHandler = new ErrorHandler(notificationService);
 

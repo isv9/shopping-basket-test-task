@@ -1,6 +1,6 @@
 import React from "react";
-import {BasketContext} from "../../../shopping-basket/gateways/basket-context";
-import {useGettingShoppingMenuDictionary} from "../../../core/effects/getting-shopping-menu-dictionary";
+import {BasketContext} from "modules/shopping-basket/gateways/basket-context";
+import {useGettingShoppingMenuDictionary} from "modules/core/effects/getting-shopping-menu-dictionary";
 import {ShoppingMenu} from "./shopping-menu";
 
 interface ShoppingMenuContainerProps {

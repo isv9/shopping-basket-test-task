@@ -1,10 +1,11 @@
-import {HttpFetchResponseError} from "../../http-fetch/entities/http-fetch-response-error";
-import {HttpFetchResponse} from "../../http-fetch/entities/http-fetch-response";
-import {NetworkError} from "../entities/network-error";
-import {NotFoundObjectError} from "../entities/not-found-object-error";
-import {BusinessError} from "../entities/business-error";
-import {HttpFetchResponseBusinessError} from "../../http-fetch/entities/http-fetch-response-business-error";
-import {HttpRequestStatusError} from "../entities/http-reques-status-error";
+import {HttpFetchResponseError} from "modules/environment/http-fetch/entities/http-fetch-response-error";
+import {HttpFetchResponseBusinessError} from "modules/environment/http-fetch/entities/http-fetch-response-business-error";
+import {NotFoundObjectError} from "modules/environment/error-handler/entities/not-found-object-error";
+import {NetworkError} from "modules/environment/error-handler/entities/network-error";
+import {HttpFetchResponse} from "modules/environment/http-fetch/entities/http-fetch-response";
+import {BusinessError} from "modules/environment/error-handler/entities/business-error";
+import {HttpRequestStatusError} from "modules/environment/error-handler/entities/http-reques-status-error";
+
 
 export function defineHttpRequestError(error?: HttpFetchResponseError<HttpFetchResponseBusinessError>): Error {
     if (error) {

@@ -1,5 +1,5 @@
-import {Command} from "../../core/command/command";
-import {ShoppingBasketFetch} from "./shopping-basket-fetch";
+import {ShoppingBasketFetch} from "modules/shopping-basket/use-cases/shopping-basket-fetch";
+import {Command} from "modules/core/command/command";
 
 interface AddingOrderParams {
     routerGateway: RouterGateway;

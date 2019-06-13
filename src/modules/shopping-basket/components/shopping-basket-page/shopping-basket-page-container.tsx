@@ -1,10 +1,10 @@
 import React from "react";
-import {BasketContext} from "../../gateways/basket-context";
 import {RouteComponentProps} from "react-router-dom";
-import {urlConfig} from "../../../../configs/url";
+import {urlConfig} from "configs/url";
 import {ShoppingBasketPage} from "./shopping-basket-page";
-import {useGettingShoppingMenuDictionary} from "../../../core/effects/getting-shopping-menu-dictionary";
-import {createAddingOrderInteractor} from "../../services/adding-order";
+import {useGettingShoppingMenuDictionary} from "modules/core/effects/getting-shopping-menu-dictionary";
+import {BasketContext} from "modules/shopping-basket/gateways/basket-context";
+import {createAddingOrderInteractor} from "modules/shopping-basket/services/adding-order";
 
 export const ShoppingBasketPageContainer: React.FC<RouteComponentProps<object>> = (props) => {
 

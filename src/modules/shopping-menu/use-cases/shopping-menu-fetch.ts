@@ -1,7 +1,7 @@
-import {ShoppingMenuItem, ShoppingMenuItemId} from "../entities/shopping-menu-item";
-import {HttpFetch} from "../../environment/http-fetch/entities/http-fetch";
-import {HttpFetchResponseError} from "../../environment/http-fetch/entities/http-fetch-response-error";
-import {HttpFetchResponseBusinessError} from "../../environment/http-fetch/entities/http-fetch-response-business-error";
+import {HttpFetch} from "modules/environment/http-fetch/entities/http-fetch";
+import {HttpFetchResponseBusinessError} from "modules/environment/http-fetch/entities/http-fetch-response-business-error";
+import {HttpFetchResponseError} from "modules/environment/http-fetch/entities/http-fetch-response-error";
+import {ShoppingMenuItem, ShoppingMenuItemId} from "modules/shopping-menu/entities/shopping-menu-item";
 
 interface ShoppingMenuFetchParams {
     httpFetch: HttpFetch;

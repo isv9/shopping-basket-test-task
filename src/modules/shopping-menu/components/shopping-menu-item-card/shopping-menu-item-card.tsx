@@ -1,12 +1,13 @@
 import React, {useCallback} from "react";
-import {ShoppingBasketAdjustingOrderedItemCount} from "../../../shopping-basket/components/adjusting-order-item/adjusting-order-item";
-import {ShoppingMenuItem as MenuItemModel} from "../../entities/shopping-menu-item";
 import {css} from "aphrodite/no-important";
-import {Button} from "../../../core/components/button/button";
 import {shoppingMenuItemCardStyles as styles} from "./styles";
+import boxSvg from 'assets/images/box.svg';
+import {Button} from "modules/core/components/button/button";
+import {ShoppingMenuItem} from "modules/shopping-menu/entities/shopping-menu-item";
+import {ShoppingBasketAdjustingOrderedItemCount} from "modules/shopping-basket/components/adjusting-order-item/adjusting-order-item";
 
 interface ShoppingMenuItemCardProps {
-    menuItem: MenuItemModel;
+    menuItem: ShoppingMenuItem;
     orderCount: number | undefined;
     style?: object;
 
@@ -14,8 +15,6 @@ interface ShoppingMenuItemCardProps {
 
     adjustOrderedItem(orderedItemId: string, adjustmentValue: number): void;
 }
-
-const boxSvg = require('../../../../assets/images/box.svg');
 
 export const ShoppingMenuItemCard: React.FC<ShoppingMenuItemCardProps> = (props) => {
     const {

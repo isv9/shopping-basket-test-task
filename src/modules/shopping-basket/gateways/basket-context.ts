@@ -1,5 +1,5 @@
 import React from "react";
-import {ShoppingBasket} from "../entities/shopping-basket";
+import {ShoppingBasket} from "modules/shopping-basket/entities/shopping-basket";
 
 export const BasketContext = React.createContext<BasketContextModel>({
     shoppingBasket: new ShoppingBasket(),

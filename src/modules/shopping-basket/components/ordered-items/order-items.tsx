@@ -1,8 +1,8 @@
 import React from "react";
-import {OrderedItemViewModel} from "../../entities/ordered-item-view-model";
-import {ShoppingBasketOrderedItemCard} from "../ordered-item-card/ordered-item-card";
 import {css} from "aphrodite/no-important";
 import {shoppingBasketOrderedItemsStyles as styles} from "./styles";
+import {OrderedItemViewModel} from "modules/shopping-basket/entities/ordered-item-view-model";
+import {ShoppingBasketOrderedItemCard} from "modules/shopping-basket/components/ordered-item-card/ordered-item-card";
 
 interface ShoppingBasketOrderedItemsProps {
     orderedItems: Array<OrderedItemViewModel>;

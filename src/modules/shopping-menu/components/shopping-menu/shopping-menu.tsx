@@ -1,8 +1,8 @@
 import React from "react";
-import {ShoppingMenuItemCard} from "../shopping-menu-item-card/shopping-menu-item-card";
-import {ShoppingMenuItem} from "../../entities/shopping-menu-item";
 import {css} from "aphrodite/no-important";
 import {shoppingMenuStyles as styles} from "./styles";
+import {ShoppingMenuItem} from "modules/shopping-menu/entities/shopping-menu-item";
+import {ShoppingMenuItemCard} from "modules/shopping-menu/components/shopping-menu-item-card/shopping-menu-item-card";
 
 interface ShoppingMenuProps {
     menu: Array<ShoppingMenuItem>;

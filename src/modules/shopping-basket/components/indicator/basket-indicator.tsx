@@ -1,7 +1,7 @@
 import React from "react";
 import {css} from "aphrodite/no-important";
-import {Link} from "../../../core/components/link/link";
-import {urlConfig} from "../../../../configs/url";
+import {Link} from "modules/core/components/link/link";
+import {urlConfig} from "configs/url";
 import {shoppingBasketIndicatorStyles as styles} from "./styles";
 
 interface ShoppingBasket {

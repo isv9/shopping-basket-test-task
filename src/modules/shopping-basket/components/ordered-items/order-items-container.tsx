@@ -1,8 +1,8 @@
 import React from "react";
-import {BasketContext} from "../../gateways/basket-context";
-import {mapShoppingBasketOrderedItemsViewModel} from "../../presenters/order-items";
 import {ShoppingBasketOrderedItems} from "./order-items";
-import {ShoppingMenuItem, ShoppingMenuItemId} from "../../../shopping-menu/entities/shopping-menu-item";
+import {ShoppingMenuItem, ShoppingMenuItemId} from "modules/shopping-menu/entities/shopping-menu-item";
+import {mapShoppingBasketOrderedItemsViewModel} from "modules/shopping-basket/presenters/order-items";
+import {BasketContext} from "modules/shopping-basket/gateways/basket-context";
 
 interface ShoppingBasketOrderedItemsContainerProps {
     shoppingMenuDictionary: Map<ShoppingMenuItemId, ShoppingMenuItem>;

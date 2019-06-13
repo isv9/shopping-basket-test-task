@@ -1,6 +1,6 @@
-import {mapShoppingBasketOrderedItemsViewModel} from "../order-items";
-import {OrderedItem} from "../../entities/ordered-item";
-import {ShoppingMenuItem, ShoppingMenuItemId} from "../../../shopping-menu/entities/shopping-menu-item";
+import {OrderedItem} from "modules/shopping-basket/entities/ordered-item";
+import {ShoppingMenuItem, ShoppingMenuItemId} from "modules/shopping-menu/entities/shopping-menu-item";
+import {mapShoppingBasketOrderedItemsViewModel} from "modules/shopping-basket/presenters/order-items";
 
 describe('mapShoppingBasketOrderedItemsViewModel', () => {
     it('mapShoppingBasketOrderedItemsViewModel', () => {

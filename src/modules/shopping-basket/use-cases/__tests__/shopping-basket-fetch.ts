@@ -1,4 +1,4 @@
-import {ShoppingBasketFetch} from "../shopping-basket-fetch";
+import {ShoppingBasketFetch} from "modules/shopping-basket/use-cases/shopping-basket-fetch";
 
 function getHttpFetchMock() {
     return {

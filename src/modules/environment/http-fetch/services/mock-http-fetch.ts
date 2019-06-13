@@ -1,14 +1,14 @@
-import {HttpFetch} from "../entities/http-fetch";
-import {HttpFetchResponse} from "../entities/http-fetch-response";
-import {ShoppingMenuItem} from "../../../shopping-menu/entities/shopping-menu-item";
+import {ShoppingMenuItem} from "modules/shopping-menu/entities/shopping-menu-item";
 import {
     AddingOrderedItemToShoppingBasketInputDTO,
     AdjustingOrderedItemInShoppingBasketInputDTO,
     RemovingOrderedItemFromShoppingBasketInputDTO,
     ServiceShoppingBasketDTO
-} from "../../../shopping-basket/dtos/service-shopping-basket-dtos";
-import {NotFoundObjectError} from "../../error-handler/entities/not-found-object-error";
-import {ShoppingMenuFetch} from "../../../shopping-menu/use-cases/shopping-menu-fetch";
+} from "modules/shopping-basket/dtos/service-shopping-basket-dtos";
+import {ShoppingMenuFetch} from "modules/shopping-menu/use-cases/shopping-menu-fetch";
+import {HttpFetch} from "modules/environment/http-fetch/entities/http-fetch";
+import {HttpFetchResponse} from "modules/environment/http-fetch/entities/http-fetch-response";
+import {NotFoundObjectError} from "modules/environment/error-handler/entities/not-found-object-error";
 
 const shoppingBasketLocalStorageKey = 'shoppingBasket';
 

@@ -1,5 +1,5 @@
-import {NotificationService} from "../../notification/notification";
-import {NetworkError} from "../entities/network-error";
+import {NotificationService} from "modules/environment/notification/notification";
+import {NetworkError} from "modules/environment/error-handler/entities/network-error";
 
 export class ErrorHandler {
 

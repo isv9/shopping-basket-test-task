@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
+import {shoppingBasketFetch} from "modules/shopping-basket/services/shopping-basket-fetch";
+import {errorHandler} from "modules/environment/error-handler/services/error-handler";
+import {ShoppingBasket} from "modules/shopping-basket/entities/shopping-basket";
 import {BasketContext} from "../gateways/basket-context";
-import {ShoppingBasket} from "../entities/shopping-basket";
-import {shoppingBasketFetch} from "../services/shopping-basket-fetch";
-import {errorHandler} from "../../environment/error-handler/services/error-handler";
 
 export const ShoppingBasketProvider: React.FC = (props) => {
 

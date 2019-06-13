@@ -1,8 +1,12 @@
-import {defineHttpRequestError, defineHttpRequestErrorByStatus} from "../differentiation-http-request-error";
-import {NetworkError} from "../../entities/network-error";
-import {HttpFetchResponse} from "../../../http-fetch/entities/http-fetch-response";
-import {HttpFetchResponseError} from "../../../http-fetch/entities/http-fetch-response-error";
-import {HttpFetchResponseBusinessError} from "../../../http-fetch/entities/http-fetch-response-business-error";
+import {
+    defineHttpRequestError,
+    defineHttpRequestErrorByStatus
+} from "modules/environment/error-handler/use-cases/differentiation-http-request-error";
+import {HttpFetchResponseError} from "modules/environment/http-fetch/entities/http-fetch-response-error";
+import {HttpFetchResponseBusinessError} from "modules/environment/http-fetch/entities/http-fetch-response-business-error";
+import {NetworkError} from "modules/environment/error-handler/entities/network-error";
+import {HttpFetchResponse} from "modules/environment/http-fetch/entities/http-fetch-response";
+
 
 describe('defineHttpRequestError', () => {
 

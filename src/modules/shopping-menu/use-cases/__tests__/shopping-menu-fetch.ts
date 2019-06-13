@@ -1,6 +1,5 @@
-import {ShoppingMenuItem} from "../../entities/shopping-menu-item";
-import {ShoppingMenuFetch} from "../shopping-menu-fetch";
-
+import {ShoppingMenuItem} from "modules/shopping-menu/entities/shopping-menu-item";
+import {ShoppingMenuFetch} from "modules/shopping-menu/use-cases/shopping-menu-fetch";
 
 describe('ShoppingMenuFetch', () => {
 

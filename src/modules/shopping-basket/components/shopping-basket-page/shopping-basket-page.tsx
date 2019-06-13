@@ -1,13 +1,13 @@
 import React from "react";
-import {PageHeader} from "../../../core/components/page/components/page-header";
+import {PageHeader} from "modules/core/components/page/components/page-header";
 import {css} from "aphrodite/no-important";
-import {Link} from "../../../core/components/link/link";
-import {urlConfig} from "../../../../configs/url";
-import {ShoppingBasketOrderedItemsContainer} from "../ordered-items/order-items-container";
+import {Link} from "modules/core/components/link/link";
+import {urlConfig} from "configs/url";
 import {shoppingBasketPageStyles as styles} from "./styles";
-import {ShoppingMenuItem, ShoppingMenuItemId} from "../../../shopping-menu/entities/shopping-menu-item";
-import {Command as CommandView} from "../../../core/components/command/command";
-import {Command} from "../../../core/command/command";
+import {ShoppingMenuItem, ShoppingMenuItemId} from "modules/shopping-menu/entities/shopping-menu-item";
+import {Command as CommandView} from "modules/core/components/command/command";
+import {Command} from "modules/core/command/command";
+import {ShoppingBasketOrderedItemsContainer} from "../ordered-items/order-items-container";
 
 interface ShoppingBasketProps {
     addOrderCommand: Command;

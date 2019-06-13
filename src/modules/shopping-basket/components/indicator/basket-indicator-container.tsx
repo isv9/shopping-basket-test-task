@@ -1,6 +1,6 @@
 import React from "react";
-import {BasketContext} from "../../gateways/basket-context";
 import {ShoppingBasketIndicator} from "./basket-indicator";
+import {BasketContext} from "modules/shopping-basket/gateways/basket-context";
 
 export const ShoppingBasketIndicatorContainer: React.FC = () => {
 

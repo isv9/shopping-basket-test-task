@@ -1,6 +1,6 @@
 import React from "react";
-import {Button, ButtonProps} from "../button/button";
-import {Command as CommandModel} from "../../command/command";
+import {Command as CommandModel} from "modules/core/command/command";
+import {Button, ButtonProps} from "modules/core/components/button/button";
 
 interface CommandProps extends ButtonProps {
     command: CommandModel;

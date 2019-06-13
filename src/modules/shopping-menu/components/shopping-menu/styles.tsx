@@ -1,5 +1,5 @@
 import {CSSProperties, StyleSheet} from "aphrodite/no-important";
-import {shoppingMenuItemCardContainerInRem} from "../shopping-menu-item-card/styles";
+import {shoppingMenuItemCardContainerInRem} from "modules/shopping-menu/components/shopping-menu-item-card/styles";
 
 const shoppingMenuItemGap = 1;
 

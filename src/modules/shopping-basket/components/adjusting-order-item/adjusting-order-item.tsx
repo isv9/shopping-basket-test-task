@@ -1,6 +1,6 @@
 import React from "react";
 import {css} from "aphrodite/no-important";
-import {Button} from "../../../core/components/button/button";
+import {Button} from "modules/core/components/button/button";
 import {shoppingBasketAdjustingOrderedItemCountStyles as styles} from "./styles";
 
 interface ShoppingBasketAdjustingOrderedItemProps {

@@ -1,4 +1,4 @@
-import {AddingOrderInteractor} from "../adding-order";
+import {AddingOrderInteractor} from "modules/shopping-basket/use-cases/adding-order";
 
 function getRouterGatewayMock() {
     return {
