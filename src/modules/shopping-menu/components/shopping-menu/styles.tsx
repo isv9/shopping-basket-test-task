@@ -1,25 +1,37 @@
 import {CSSProperties, StyleSheet} from "aphrodite/no-important";
 import {shoppingMenuItemCardContainerInRem} from "../shopping-menu-item-card/styles";
 
-const shoppingMenuItemRightGap = 1;
-const shoppingMenuItemBottomGap = 1;
+const shoppingMenuItemGap = 1;
 
 export const shoppingMenuStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
     container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'flex-start',
         maxWidth: calcMaxWidthByColumnsCount(5),
-        ...getMediaListForShoppingMenuByColumnsCounts([4, 3, 2]),
-        '@media (max-width: 570px)': {
-            flexDirection: 'column',
+        '@supports (display: grid)': {
+            display: 'grid',
+            gridTemplateColumns: `repeat(auto-fill, minmax(${shoppingMenuItemCardContainerInRem}rem, 1fr))`,
+            gridGap: `${shoppingMenuItemGap}rem`,
+            gridAutoRows: 'auto',
             alignItems: 'center',
-            width: '100%'
+            justifyItems: 'center',
+            width: 'initial',
+        },
+        '@supports not (display: grid)': {
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'flex-start',
+            ...getMediaListForShoppingMenuByColumnsCounts([4, 3, 2]),
+            '@media (max-width: 570px)': {
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: '100%'
+            },
         },
     },
     shoppingMenuItem: {
-        marginRight: `${shoppingMenuItemRightGap}rem`,
-        marginBottom: `${shoppingMenuItemBottomGap}rem`,
+        '@supports not (display: grid)': {
+            marginRight: `${shoppingMenuItemGap}rem`,
+            marginBottom: `${shoppingMenuItemGap}rem`,
+        },
     },
 });
 
@@ -35,5 +47,5 @@ export function getMediaListForShoppingMenuByColumnsCounts(columnsCounts: Array<
 }
 
 function calcMaxWidthByColumnsCount(columnsCount: number): string {
-    return `${columnsCount * (shoppingMenuItemCardContainerInRem + shoppingMenuItemRightGap)}rem`;
+    return `${columnsCount * (shoppingMenuItemCardContainerInRem + shoppingMenuItemGap)}rem`;
 }
