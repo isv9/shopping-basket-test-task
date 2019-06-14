@@ -30,7 +30,7 @@ export const ShoppingMenuItemCard: React.FC<ShoppingMenuItemCardProps> = (props)
         name,
     } = menuItem;
 
-    const onAdjust = useCallback((adjustmentValue: number) => adjustOrderedItem(menuItemId, adjustmentValue),
+    const adjust = useCallback((adjustmentValue: number) => adjustOrderedItem(menuItemId, adjustmentValue),
         [menuItemId, adjustOrderedItem]);
 
     const onAddMenuItem = useCallback(() => addMenuItem(menuItemId),
@@ -39,7 +39,7 @@ export const ShoppingMenuItemCard: React.FC<ShoppingMenuItemCardProps> = (props)
     const action = orderCount
         ? <ShoppingBasketAdjustingOrderedItemCount
             value={orderCount}
-            onAdjust={onAdjust}/>
+            adjust={adjust}/>
         :
         <Button onClick={onAddMenuItem}>Add</Button>;
 

@@ -28,7 +28,7 @@ export const ShoppingBasketOrderedItemCard: React.FC<ShoppingBasketOrderedItemCa
         orderedCount
     } = orderItem;
 
-    const onAdjust = useCallback((adjustmentValue: number) => adjustOrderedItem(itemId, adjustmentValue),
+    const adjust = useCallback((adjustmentValue: number) => adjustOrderedItem(itemId, adjustmentValue),
         [itemId, adjustOrderedItem]);
 
     return (<section className={css(styles.container, style)}>
@@ -38,7 +38,7 @@ export const ShoppingBasketOrderedItemCard: React.FC<ShoppingBasketOrderedItemCa
         <div className={css(styles.adjustContainer)}>
             {!!orderedCount && <ShoppingBasketAdjustingOrderedItemCount
                 value={orderedCount}
-                onAdjust={onAdjust}/>}
+                adjust={adjust}/>}
         </div>
         <div className={css(styles.container)}>
             <button onClick={() => removeOrderedItem(itemId)}
