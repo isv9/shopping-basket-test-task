@@ -46,7 +46,7 @@ export const ShoppingBasketProvider: React.FC = (props) => {
     useEffect(() => {
         shoppingBasketFetch
             .getCurrentShoppingBasket()
-            .then(shoppingBasket => updateShoppingBasket(shoppingBasket))
+            .then(updateShoppingBasket)
             .catch(errorHandler.processError);
         // eslint-disable-next-line
     }, []);

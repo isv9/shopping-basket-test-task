@@ -25,9 +25,7 @@ export const ShoppingBasketPageContainer: React.FC<RouteComponentProps<object>> 
                         clear: clearShoppingBasket
                     },
                     routerGateway: {
-                        redirectToMenu: () => {
-                            props.history.push(urlConfig.shoppingMenu);
-                        }
+                        redirectToMenu: () => props.history.push(urlConfig.shoppingMenu)
                     }
                 });
             return <ShoppingBasketPage
