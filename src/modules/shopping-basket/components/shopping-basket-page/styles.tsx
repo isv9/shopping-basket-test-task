@@ -1,4 +1,4 @@
-import {CSSProperties, StyleSheet} from "aphrodite/no-important";
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
 export const shoppingBasketPageStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
     container: {
@@ -7,8 +7,8 @@ export const shoppingBasketPageStyles = StyleSheet.create<{ [key: string]: CSSPr
         width: '90%',
     },
     footer: {
-        display: "flex",
-        justifyContent: "space-around",
+        display: 'flex',
+        justifyContent: 'space-around',
         marginTop: '1rem',
     },
 });

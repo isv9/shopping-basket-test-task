@@ -1,1 +1,4 @@
-export type HttpFetchResponseBusinessError = { error: string; type: string };
+export interface HttpFetchResponseBusinessError {
+    error: string;
+    type: string;
+}

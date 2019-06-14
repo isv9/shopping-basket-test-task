@@ -1,11 +1,11 @@
 import React from 'react';
-import {Router} from "./modules/environment/router/router";
-import {ShoppingBasketProvider} from "./modules/shopping-basket/providers/shopping-basket-provider";
+import { Router } from './modules/environment/router/router';
+import { ShoppingBasketProvider } from './modules/shopping-basket/providers/shopping-basket-provider';
 
-const App: React.FC = () => {
-    return <ShoppingBasketProvider>
-        <Router/>
-    </ShoppingBasketProvider>;
-};
+const App: React.FC = () => (
+    <ShoppingBasketProvider>
+        <Router />
+    </ShoppingBasketProvider>
+);
 
 export default App;

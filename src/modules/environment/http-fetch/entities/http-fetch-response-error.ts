@@ -1,7 +1,7 @@
-import {HttpFetchResponse} from "./http-fetch-response";
+import { HttpFetchResponse } from './http-fetch-response';
 
-export interface HttpFetchResponseError<TErrorBody = any> extends Error {
-    request?: any;
+export interface HttpFetchResponseError<TErrorBody = object> extends Error {
+    request?: object;
     response: HttpFetchResponse<TErrorBody>;
     code?: string;
 }

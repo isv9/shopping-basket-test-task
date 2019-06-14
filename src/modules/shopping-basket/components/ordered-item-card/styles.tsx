@@ -1,4 +1,4 @@
-import {CSSProperties, StyleSheet} from "aphrodite/no-important";
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
 export const shoppingBasketOrderedItemStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
     container: {
@@ -13,18 +13,18 @@ export const shoppingBasketOrderedItemStyles = StyleSheet.create<{ [key: string]
         flex: 1,
     },
     nameLabel: {
-        fontSize: '1rem'
+        fontSize: '1rem',
     },
     adjustContainer: {
-        flex: '.3'
+        flex: '.3',
     },
     removeButtonContainer: {
-        flex: '.3'
+        flex: '.3',
     },
     removeButton: {
         backgroundColor: 'transparent',
         border: 'none',
         cursor: 'pointer',
         outline: 'none',
-    }
+    },
 });

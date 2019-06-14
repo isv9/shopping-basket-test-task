@@ -1,24 +1,18 @@
-import {OrderedItem} from "./ordered-item";
+import { OrderedItem } from './ordered-item';
 
 export class ShoppingBasket {
-
     constructor(params?: ShoppingBasketParams) {
-        const {
-            orderedItems = []
-        } = params || {orderedItems: []};
+        const { orderedItems = [] } = params || { orderedItems: [] };
         this.orderedItems = [...orderedItems];
     }
 
-    readonly orderedItems: Array<OrderedItem> = [];
+    readonly orderedItems: OrderedItem[] = [];
 
     get orderedItemsCount(): number {
-        return this.orderedItems
-            .reduce<number>((orderItemsCount, orderItem) => {
-                const {
-                    count,
-                } = orderItem;
-                return orderItemsCount + count;
-            }, 0)
+        return this.orderedItems.reduce<number>((orderItemsCount, orderItem) => {
+            const { count } = orderItem;
+            return orderItemsCount + count;
+        }, 0);
     }
 
     get hasOrderedItems(): boolean {
@@ -26,17 +20,14 @@ export class ShoppingBasket {
     }
 
     getOrderedItemCount(itemId: string): number | undefined {
-        const orderedItem = this.orderedItems
-            .find(orderedItem => orderedItem.itemId === itemId);
+        const orderedItem = this.orderedItems.find(orderedItem => orderedItem.itemId === itemId);
         return orderedItem && orderedItem.count;
     }
-
 }
 
 interface ShoppingBasketParams {
-    orderedItems: Array<{
+    orderedItems: {
         itemId: string;
         count: number;
-    }>
+    }[];
 }
-

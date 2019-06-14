@@ -1,4 +1,4 @@
-import {CSSProperties, StyleSheet} from "aphrodite/no-important";
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
 export const shoppingMenuPageStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
     container: {
@@ -17,5 +17,5 @@ export const shoppingMenuPageStyles = StyleSheet.create<{ [key: string]: CSSProp
         marginTop: '4.5rem',
         marginLeft: 'auto',
         marginRight: 'auto',
-    }
+    },
 });

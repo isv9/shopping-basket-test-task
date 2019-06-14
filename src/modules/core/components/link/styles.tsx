@@ -1,4 +1,4 @@
-import {CSSProperties, StyleSheet} from 'aphrodite/no-important';
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
 export const linkStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
     container: {
@@ -8,5 +8,5 @@ export const linkStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
         alignItems: 'center',
         justifyContent: 'center',
         textDecoration: 'none',
-    }
+    },
 });

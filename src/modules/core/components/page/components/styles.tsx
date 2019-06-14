@@ -1,4 +1,4 @@
-import {CSSProperties, StyleSheet} from "aphrodite/no-important";
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
 export const pageHeaderStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
     container: {
@@ -8,6 +8,6 @@ export const pageHeaderStyles = StyleSheet.create<{ [key: string]: CSSProperties
         backgroundColor: '#FFF',
     },
     header: {
-        flex: 1
-    }
+        flex: 1,
+    },
 });

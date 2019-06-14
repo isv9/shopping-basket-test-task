@@ -1,4 +1,4 @@
 export interface OrderedItem {
-    itemId:string;
+    itemId: string;
     count: number;
 }

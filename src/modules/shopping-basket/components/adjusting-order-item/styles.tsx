@@ -1,6 +1,8 @@
-import {CSSProperties, StyleSheet} from "aphrodite/no-important";
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
-export const shoppingBasketAdjustingOrderedItemCountStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
+export const shoppingBasketAdjustingOrderedItemCountStyles = StyleSheet.create<{
+    [key: string]: CSSProperties;
+}>({
     container: {
         display: 'flex',
         alignItems: 'center',
@@ -14,5 +16,5 @@ export const shoppingBasketAdjustingOrderedItemCountStyles = StyleSheet.create<{
     },
     adjustLabel: {
         fontSize: '1rem',
-    }
+    },
 });

@@ -1,5 +1,4 @@
 export class HttpRequestStatusError extends Error {
-
     public readonly status: number;
     public readonly statusText: string;
 

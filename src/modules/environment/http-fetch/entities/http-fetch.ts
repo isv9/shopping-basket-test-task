@@ -1,4 +1,4 @@
-import {HttpFetchResponse} from "./http-fetch-response";
+import { HttpFetchResponse } from './http-fetch-response';
 
 export interface HttpFetch {
     get<TResponse = object>(url: string): Promise<HttpFetchResponse<TResponse>>;

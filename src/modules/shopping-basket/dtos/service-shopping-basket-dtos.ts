@@ -1,8 +1,8 @@
 export interface ServiceShoppingBasketDTO {
-    orderedItems: Array<{
+    orderedItems: {
         itemId: string;
         count: number;
-    }>
+    }[];
 }
 
 export interface AddingOrderedItemToShoppingBasketInputDTO {

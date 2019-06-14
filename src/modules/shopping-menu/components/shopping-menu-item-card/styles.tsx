@@ -1,4 +1,4 @@
-import {CSSProperties, StyleSheet} from "aphrodite/no-important";
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
 export const shoppingMenuItemCardContainerInRem = 14;
 
@@ -19,5 +19,5 @@ export const shoppingMenuItemCardStyles = StyleSheet.create<{ [key: string]: CSS
     },
     actionContainer: {
         alignSelf: 'flex-end',
-    }
+    },
 });

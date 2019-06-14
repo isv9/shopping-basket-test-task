@@ -1,25 +1,24 @@
-import {ShoppingBasketFetch} from "../shopping-basket-fetch";
+import { ShoppingBasketFetch } from '../shopping-basket-fetch';
 
 function getHttpFetchMock() {
     return {
-        delete: jest.fn(() => Promise.resolve({data: {}})),
-        get: jest.fn(() => Promise.resolve({data: {}})),
-        post: jest.fn(() => Promise.resolve({data: {}})),
-    }
+        delete: jest.fn(() => Promise.resolve({ data: {} })),
+        get: jest.fn(() => Promise.resolve({ data: {} })),
+        post: jest.fn(() => Promise.resolve({ data: {} })),
+    };
 }
 
 describe('ShoppingBasketFetch', () => {
-
     let shoppingBasketFetch: ShoppingBasketFetch;
     let httpFetch: any;
     let defineHttpRequestError: any;
 
     beforeEach(() => {
         httpFetch = getHttpFetchMock();
-        defineHttpRequestError= jest.fn(error=>error);
+        defineHttpRequestError = jest.fn(error => error);
         shoppingBasketFetch = new ShoppingBasketFetch({
             httpFetch,
-            defineHttpRequestError
+            defineHttpRequestError,
         });
     });
 
@@ -41,11 +40,11 @@ describe('ShoppingBasketFetch', () => {
     it('getCurrentShoppingBasket', async () => {
         httpFetch = {
             ...getHttpFetchMock(),
-            get : jest.fn(() => Promise.resolve({data: {}}))
+            get: jest.fn(() => Promise.resolve({ data: {} })),
         };
         shoppingBasketFetch = new ShoppingBasketFetch({
             httpFetch,
-            defineHttpRequestError
+            defineHttpRequestError,
         });
         await shoppingBasketFetch.getCurrentShoppingBasket();
         expect(httpFetch.get.mock.calls).toMatchSnapshot('get calls');
@@ -60,18 +59,17 @@ describe('ShoppingBasketFetch', () => {
         expect.assertions(2);
         httpFetch = {
             ...getHttpFetchMock(),
-            post : jest.fn(() => Promise.reject(new Error()))
+            post: jest.fn(() => Promise.reject(new Error())),
         };
         shoppingBasketFetch = new ShoppingBasketFetch({
             httpFetch,
-            defineHttpRequestError
+            defineHttpRequestError,
         });
         try {
             await shoppingBasketFetch.addOrder();
-        }catch (e) {
+        } catch (e) {
             expect(e).toBeInstanceOf(Error);
         }
         expect(defineHttpRequestError.mock.calls.length).toBe(1);
     });
-
 });

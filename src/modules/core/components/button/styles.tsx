@@ -1,4 +1,4 @@
-import {CSSProperties, StyleSheet} from 'aphrodite/no-important';
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
 export const buttonStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
     container: {
@@ -14,7 +14,7 @@ export const buttonStyles = StyleSheet.create<{ [key: string]: CSSProperties }>(
         outline: 'none',
     },
     disabledButton: {
-        opacity: .5,
-        cursor: "auto",
-    }
+        opacity: 0.5,
+        cursor: 'auto',
+    },
 });

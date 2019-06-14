@@ -1,5 +1,5 @@
-import {Command} from "../../core/command/command";
-import {ShoppingBasketFetch} from "./shopping-basket-fetch";
+import { Command } from '../../core/command/command';
+import { ShoppingBasketFetch } from './shopping-basket-fetch';
 
 interface AddingOrderParams {
     routerGateway: RouterGateway;
@@ -17,29 +17,26 @@ interface RouterGateway {
 }
 
 interface ShoppingBasketFetchGateway {
-    addOrder: ShoppingBasketFetch['addOrder']
+    addOrder: ShoppingBasketFetch['addOrder'];
 }
 
 export class AddingOrderInteractor {
+    private readonly shoppingBasketFetch: ShoppingBasketFetchGateway;
 
-    constructor(private readonly shoppingBasketFetch: ShoppingBasketFetchGateway) {
+    constructor(shoppingBasketFetch: ShoppingBasketFetchGateway) {
+        this.shoppingBasketFetch = shoppingBasketFetch;
     }
 
     getAddingOrderCommand(params: AddingOrderParams): Command {
-        const {
-            shoppingBasket
-        } = params;
+        const { shoppingBasket } = params;
         return {
             isAvailable: shoppingBasket.hasOrderItems,
-            execute: () => this.addOrder(params)
-        }
+            execute: () => this.addOrder(params),
+        };
     }
 
     async addOrder(params: AddingOrderParams) {
-        const {
-            routerGateway,
-            shoppingBasket,
-        } = params;
+        const { routerGateway, shoppingBasket } = params;
         await this.shoppingBasketFetch.addOrder();
         shoppingBasket.clear();
         routerGateway.redirectToMenu();

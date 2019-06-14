@@ -1,12 +1,12 @@
-import {CSSProperties, StyleSheet} from "aphrodite/no-important";
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
 
 export const shoppingBasketIndicatorStyles = StyleSheet.create<{ [key: string]: CSSProperties }>({
     container: {
         border: '1px solid #ff6900',
         backgroundColor: '#ff6900',
         color: '#FFF',
-        display: "flex",
-        alignItems: "center",
+        display: 'flex',
+        alignItems: 'center',
         justifyContent: 'space-around',
         paddingLeft: '1rem',
         paddingRight: '1rem',
@@ -14,7 +14,7 @@ export const shoppingBasketIndicatorStyles = StyleSheet.create<{ [key: string]: 
     },
     orderItemsCountContainer: {
         height: '65%',
-        borderLeftStyle: "solid",
+        borderLeftStyle: 'solid',
         borderLeftWidth: '1px',
         borderLeftColor: '#FFFFFF36',
         display: 'flex',
@@ -27,5 +27,5 @@ export const shoppingBasketIndicatorStyles = StyleSheet.create<{ [key: string]: 
     },
     shoppingBasketLabel: {
         fontSize: '1rem',
-    }
+    },
 });

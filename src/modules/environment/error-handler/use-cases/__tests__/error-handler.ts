@@ -1,9 +1,8 @@
-import {ErrorHandler} from "../error-handler";
-import {NotificationService} from "../../../notification/notification";
-import {NetworkError} from "../../entities/network-error";
+import { ErrorHandler } from '../error-handler';
+import { NotificationService } from '../../../notification/notification';
+import { NetworkError } from '../../entities/network-error';
 
 describe('ErrorHandler', () => {
-
     let errorHandler: ErrorHandler;
     let notificationService: NotificationService;
 

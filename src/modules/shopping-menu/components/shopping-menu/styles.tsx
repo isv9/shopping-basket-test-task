@@ -1,5 +1,5 @@
-import {CSSProperties, StyleSheet} from "aphrodite/no-important";
-import {shoppingMenuItemCardContainerInRem} from "../shopping-menu-item-card/styles";
+import { CSSProperties, StyleSheet } from 'aphrodite/no-important';
+import { shoppingMenuItemCardContainerInRem } from '../shopping-menu-item-card/styles';
 
 const shoppingMenuItemGap = 1;
 
@@ -23,7 +23,7 @@ export const shoppingMenuStyles = StyleSheet.create<{ [key: string]: CSSProperti
             '@media (max-width: 570px)': {
                 flexDirection: 'column',
                 alignItems: 'center',
-                width: '100%'
+                width: '100%',
             },
         },
     },
@@ -35,7 +35,7 @@ export const shoppingMenuStyles = StyleSheet.create<{ [key: string]: CSSProperti
     },
 });
 
-export function getMediaListForShoppingMenuByColumnsCounts(columnsCounts: Array<number>): { [key: string]: CSSProperties } {
+export function getMediaListForShoppingMenuByColumnsCounts(columnsCounts: number[]): { [key: string]: CSSProperties } {
     return columnsCounts.reduce<{ [key: string]: CSSProperties }>((result, columnsCount) => {
         const maxWidth = 800 + 240 * (columnsCount - 2);
         const styleMedia = `@media (max-width: ${maxWidth}px)`;
