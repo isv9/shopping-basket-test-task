@@ -4,6 +4,7 @@ import { AdjustingNumberValue } from '../../common/adjusting-number-value/adjust
 import { css } from 'aphrodite/no-important';
 import { shoppingBasketOrderedItemStyles as styles } from './styles';
 import removeSvg from '../../../assets/images/remove.svg';
+import { IconButton } from '../../common/icon-button/button';
 
 type Props = {
     orderItem: OrderedItemViewModel;
@@ -32,9 +33,9 @@ export const ShoppingBasketOrderedItemCard = (props: Props) => {
                 {!!orderedCount && <AdjustingNumberValue value={orderedCount} adjust={adjust} />}
             </div>
             <div className={css(styles.container)}>
-                <button type="button" onClick={() => removeOrderedItem(itemId)} className={css(styles.removeButton)}>
+                <IconButton onClick={() => removeOrderedItem(itemId)} className={css(styles.removeButton)}>
                     <img src={removeSvg} className={css(styles.removeBtnSvg)} alt="remove ordered item" />
-                </button>
+                </IconButton>
             </div>
         </section>
     );
