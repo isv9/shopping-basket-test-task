@@ -5,7 +5,7 @@ import { ShoppingBasketIndicatorContainer } from '../../shopping-basket/indicato
 import { shoppingMenuPageStyles as styles } from './styles';
 import { ShoppingMenuContainer } from '../shopping-menu/shopping-menu-container';
 
-export const ShoppingMenuPage: React.FC = () => {
+export const ShoppingMenuPage = () => {
     return (
         <article className={css(styles.container)}>
             <PageHeader label="Menu" style={styles.header}>

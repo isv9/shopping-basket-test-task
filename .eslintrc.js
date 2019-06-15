@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint/explicit-member-accessibility': [{ accessibility: 'no-public' }],
         '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
         'react/prop-types': 'off',
+        '@typescript-eslint/prefer-interface': 'off',
         '@typescript-eslint/explicit-function-return-type': [{ allowExpressions: true }],
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies,

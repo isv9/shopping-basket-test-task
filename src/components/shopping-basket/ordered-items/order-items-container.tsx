@@ -4,11 +4,11 @@ import { ShoppingBasketOrderedItems } from './order-items';
 import { ShoppingMenuItem, ShoppingMenuItemId } from '../../../entities/shopping-menu/shopping-menu-item';
 import { ShoppingBasketContext } from '../../../gateways/shopping-basket-context';
 
-interface ShoppingBasketOrderedItemsContainerProps {
+type Props = {
     shoppingMenuDictionary: Map<ShoppingMenuItemId, ShoppingMenuItem>;
-}
+};
 
-export const ShoppingBasketOrderedItemsContainer: React.FC<ShoppingBasketOrderedItemsContainerProps> = props => {
+export const ShoppingBasketOrderedItemsContainer = (props: Props) => {
     const { shoppingMenuDictionary } = props;
 
     return (

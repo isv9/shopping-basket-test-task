@@ -1,15 +1,15 @@
 import React, { useCallback } from 'react';
 import { css } from 'aphrodite/no-important';
-import { Button } from '../../common/button/button';
+import { Button } from '../button/button';
 import { shoppingBasketAdjustingOrderedItemCountStyles as styles } from './styles';
 
-interface ShoppingBasketAdjustingOrderedItemProps {
+type Props = {
     value: number;
 
     adjust(adjustmentValue: number): void;
-}
+};
 
-export const ShoppingBasketAdjustingOrderedItemCount: React.FC<ShoppingBasketAdjustingOrderedItemProps> = props => {
+export const AdjustingNumberValue = (props: Props) => {
     const { adjust, value } = props;
 
     const decrease = useCallback(() => adjust(-1), [adjust]);

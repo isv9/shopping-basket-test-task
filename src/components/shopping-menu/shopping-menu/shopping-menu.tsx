@@ -4,7 +4,7 @@ import { ShoppingMenuItem } from '../../../entities/shopping-menu/shopping-menu-
 import { css } from 'aphrodite/no-important';
 import { shoppingMenuStyles as styles } from './styles';
 
-interface ShoppingMenuProps {
+type Props = {
     menu: ShoppingMenuItem[];
     style?: object;
 
@@ -13,9 +13,9 @@ interface ShoppingMenuProps {
     getOrderedItemCount(orderedItemId: string): number | undefined;
 
     adjustOrderedItem(orderedItemId: string, adjustmentValue: number): void;
-}
+};
 
-export const ShoppingMenu: React.FC<ShoppingMenuProps> = props => {
+export const ShoppingMenu = (props: Props) => {
     const { addMenuItem, adjustOrderedItem, getOrderedItemCount, menu = [], style } = props;
 
     return (

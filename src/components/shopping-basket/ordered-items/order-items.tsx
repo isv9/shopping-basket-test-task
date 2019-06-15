@@ -4,15 +4,15 @@ import { ShoppingBasketOrderedItemCard } from '../ordered-item-card/ordered-item
 import { css } from 'aphrodite/no-important';
 import { shoppingBasketOrderedItemsStyles as styles } from './styles';
 
-interface ShoppingBasketOrderedItemsProps {
+type Props = {
     orderedItems: OrderedItemViewModel[];
 
     adjustOrderedItem(itemId: string, adjustmentValue: number): void;
 
     removeOrderedItem(itemId: string): void;
-}
+};
 
-export const ShoppingBasketOrderedItems: React.FC<ShoppingBasketOrderedItemsProps> = props => {
+export const ShoppingBasketOrderedItems = (props: Props) => {
     const { adjustOrderedItem, orderedItems = [], removeOrderedItem } = props;
 
     const orderItemsLastIndex = orderedItems.length - 1;

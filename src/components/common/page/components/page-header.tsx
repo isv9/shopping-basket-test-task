@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { css } from 'aphrodite/no-important';
 import { pageHeaderStyles as styles } from './styles';
 
-interface PageHeaderProps {
+type Props = {
     label: string;
     style?: object;
-}
+    children?: ReactElement;
+};
 
-export const PageHeader: React.FC<PageHeaderProps> = props => {
+export const PageHeader = (props: Props) => {
     const { label, children, style } = props;
     return (
         <header className={css(styles.container, style)}>

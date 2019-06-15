@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react';
-import { ShoppingBasketAdjustingOrderedItemCount } from '../../shopping-basket/adjusting-order-item/adjusting-order-item';
+import { AdjustingNumberValue } from '../../common/adjusting-number-value/adjusting-order-item';
 import { ShoppingMenuItem as MenuItemModel } from '../../../entities/shopping-menu/shopping-menu-item';
 import { css } from 'aphrodite/no-important';
 import { Button } from '../../common/button/button';
 import { shoppingMenuItemCardStyles as styles } from './styles';
 import boxSvg from '../../../assets/images/box.svg';
 
-interface ShoppingMenuItemCardProps {
+type Props = {
     menuItem: MenuItemModel;
     orderCount: number | undefined;
     style?: object;
@@ -14,9 +14,9 @@ interface ShoppingMenuItemCardProps {
     addMenuItem(menuItemId: string): void;
 
     adjustOrderedItem(orderedItemId: string, adjustmentValue: number): void;
-}
+};
 
-export const ShoppingMenuItemCard: React.FC<ShoppingMenuItemCardProps> = props => {
+export const ShoppingMenuItemCard = (props: Props) => {
     const { addMenuItem, adjustOrderedItem, menuItem, orderCount, style = {} } = props;
     const { id: menuItemId, name } = menuItem;
 
@@ -28,7 +28,7 @@ export const ShoppingMenuItemCard: React.FC<ShoppingMenuItemCardProps> = props =
     const onAddMenuItem = useCallback(() => addMenuItem(menuItemId), [menuItemId, addMenuItem]);
 
     const action = orderCount ? (
-        <ShoppingBasketAdjustingOrderedItemCount value={orderCount} adjust={adjust} />
+        <AdjustingNumberValue value={orderCount} adjust={adjust} />
     ) : (
         <Button onClick={onAddMenuItem}>Add</Button>
     );

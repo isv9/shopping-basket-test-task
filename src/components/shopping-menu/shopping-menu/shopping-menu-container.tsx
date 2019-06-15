@@ -3,11 +3,11 @@ import { useGettingShoppingMenuDictionary } from '../../../effects/getting-shopp
 import { ShoppingMenu } from './shopping-menu';
 import { ShoppingBasketContext } from '../../../gateways/shopping-basket-context';
 
-interface ShoppingMenuContainerProps {
+type Props = {
     shoppingMenuStyle?: object;
-}
+};
 
-export const ShoppingMenuContainer: React.FC<ShoppingMenuContainerProps> = props => {
+export const ShoppingMenuContainer = (props: Props) => {
     const { shoppingMenuStyle } = props;
 
     const shoppingMenuDictionary = useGettingShoppingMenuDictionary();

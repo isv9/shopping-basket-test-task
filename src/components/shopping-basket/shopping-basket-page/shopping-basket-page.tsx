@@ -9,12 +9,12 @@ import { ShoppingMenuItem, ShoppingMenuItemId } from '../../../entities/shopping
 import { Command as CommandView } from '../../common/command/command';
 import { Command } from '../../../entities/command';
 
-interface ShoppingBasketProps {
+type Props = {
     addOrderCommand: Command;
     shoppingMenuDictionary: Map<ShoppingMenuItemId, ShoppingMenuItem>;
-}
+};
 
-export const ShoppingBasketPage: React.FC<ShoppingBasketProps> = props => {
+export const ShoppingBasketPage = (props: Props) => {
     const { addOrderCommand, shoppingMenuDictionary } = props;
 
     return (

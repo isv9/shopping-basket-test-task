@@ -6,7 +6,7 @@ import { useGettingShoppingMenuDictionary } from '../../../effects/getting-shopp
 import { createAddingOrderInteractor } from '../../../services/shopping-basket/adding-order';
 import { ShoppingBasketContext } from '../../../gateways/shopping-basket-context';
 
-export const ShoppingBasketPageContainer: React.FC<RouteComponentProps<object>> = props => {
+export const ShoppingBasketPageContainer = (props: RouteComponentProps) => {
     const shoppingMenuDictionary = useGettingShoppingMenuDictionary();
 
     return (

@@ -4,11 +4,11 @@ import { Link as RouterLink, LinkProps } from 'react-router-dom';
 import { buttonStyles } from '../button/styles';
 import { linkStyles as styles } from './styles';
 
-interface CustomLinkProps extends LinkProps {
+type Props = {
     style?: object;
-}
+} & LinkProps;
 
-export const Link: React.FC<CustomLinkProps> = props => {
+export const Link = (props: Props) => {
     const { children, style, ...otherProps } = props;
 
     return (

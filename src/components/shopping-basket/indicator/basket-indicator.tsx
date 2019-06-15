@@ -9,11 +9,11 @@ interface ShoppingBasket {
     orderedItemsCount: number;
 }
 
-interface ShoppingBasketIndicatorProps {
+type Props = {
     shoppingBasket: ShoppingBasket;
-}
+};
 
-export const ShoppingBasketIndicator: React.FC<ShoppingBasketIndicatorProps> = props => {
+export const ShoppingBasketIndicator = (props: Props) => {
     const { shoppingBasket } = props;
     return (
         <Link to={urlConfig.shoppingBasket} style={styles.container}>

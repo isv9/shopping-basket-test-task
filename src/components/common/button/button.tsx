@@ -2,12 +2,11 @@ import React from 'react';
 import { css } from 'aphrodite/no-important';
 import { buttonStyles } from './styles';
 
-export interface ButtonProps
-    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+type Props = {
     style?: object;
-}
+} & React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-export const Button: React.FC<ButtonProps> = props => {
+export const Button = (props: Props) => {
     const { children, disabled, style, ...otherProps } = props;
 
     return (
