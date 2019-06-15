@@ -12,6 +12,7 @@ export const Button: React.FC<ButtonProps> = props => {
 
     return (
         <button
+            type="button"
             className={css(buttonStyles.container, disabled && buttonStyles.disabledButton, style)}
             disabled={disabled}
             {...otherProps}

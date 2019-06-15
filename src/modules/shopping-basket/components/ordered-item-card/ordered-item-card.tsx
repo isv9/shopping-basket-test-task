@@ -32,7 +32,7 @@ export const ShoppingBasketOrderedItemCard: React.FC<ShoppingBasketOrderedItemCa
                 {!!orderedCount && <ShoppingBasketAdjustingOrderedItemCount value={orderedCount} adjust={adjust} />}
             </div>
             <div className={css(styles.container)}>
-                <button onClick={() => removeOrderedItem(itemId)} className={css(styles.removeButton)}>
+                <button type="button" onClick={() => removeOrderedItem(itemId)} className={css(styles.removeButton)}>
                     <img src={removeSvg} className={css(styles.removeBtnSvg)} alt="remove ordered item" />
                 </button>
             </div>
