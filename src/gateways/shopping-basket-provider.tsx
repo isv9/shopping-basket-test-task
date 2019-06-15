@@ -25,7 +25,7 @@ export const ShoppingBasketProvider = (props: Props) => {
         shoppingBasketFetch
             .getCurrentShoppingBasket()
             .then(updateShoppingBasket)
-            .catch(errorHandler.processError);// eslint-disable-next-line
+            .catch(errorHandler.processError); // eslint-disable-next-line
     }, []);
 
     function addMenuItem(menuItemId: string) {

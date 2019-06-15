@@ -10,84 +10,76 @@ import {
 import { HttpFetchResponseError } from '../../entities/http-fetch/http-fetch-response-error';
 import { HttpFetchResponseBusinessError } from '../../entities/http-fetch/http-fetch-response-business-error';
 
+interface DefineHttpRequestError {
+    (error: HttpFetchResponseError<HttpFetchResponseBusinessError>): Error;
+}
+
 interface ShoppingBasketFetchParams {
     httpFetch: HttpFetch;
+    defineHttpRequestError: DefineHttpRequestError;
+}
 
-    defineHttpRequestError(error: HttpFetchResponseError<HttpFetchResponseBusinessError>): Error;
+function createShoppingBasket(dto: HttpFetchResponse<ServiceShoppingBasketDTO>): ShoppingBasket {
+    return new ShoppingBasket(dto.data);
 }
 
 export class ShoppingBasketFetch {
-    static basePath = '/shopping-basket';
+    static readonly basePath = '/shopping-basket';
 
     private readonly httpFetch: HttpFetch;
-    private readonly defineHttpRequestError: (error: HttpFetchResponseError<HttpFetchResponseBusinessError>) => Error;
+    private readonly defineHttpRequestError: DefineHttpRequestError;
 
     constructor(params: ShoppingBasketFetchParams) {
         this.httpFetch = params.httpFetch;
         this.defineHttpRequestError = params.defineHttpRequestError;
+        this.httpFetchErrorHandler = this.httpFetchErrorHandler.bind(this);
     }
 
     addOrder(): Promise<void> {
-        const request = () => this.httpFetch.post<object, void>(`${ShoppingBasketFetch.basePath}/order`, {});
-
-        return this.addRequestTask<void>(request);
+        return this.httpFetch
+            .post<object, void>(`${ShoppingBasketFetch.basePath}/order`, {})
+            .then(response => response.data)
+            .catch(this.httpFetchErrorHandler);
     }
 
     getCurrentShoppingBasket(): Promise<ShoppingBasket> {
-        const request = () => this.httpFetch.get<ServiceShoppingBasketDTO>(ShoppingBasketFetch.basePath);
-
-        return this.addRequestTask<ServiceShoppingBasketDTO>(request).then(
-            serviceShoppingBasketDto => new ShoppingBasket(serviceShoppingBasketDto),
-        );
+        return this.httpFetch
+            .get<ServiceShoppingBasketDTO>(ShoppingBasketFetch.basePath)
+            .then(createShoppingBasket)
+            .catch(this.httpFetchErrorHandler);
     }
 
     addOrderedItemToShoppingBasket(orderedItemId: string): Promise<ShoppingBasket> {
-        const request = () =>
-            this.httpFetch.post<AddingOrderedItemToShoppingBasketInputDTO, ServiceShoppingBasketDTO>(
-                `${ShoppingBasketFetch.basePath}/ordered-item`,
-                { orderedItemId },
-            );
-
-        return this.addRequestTask<ServiceShoppingBasketDTO>(request).then(
-            serviceShoppingBasketDto => new ShoppingBasket(serviceShoppingBasketDto),
-        );
+        return this.httpFetch
+            .post<AddingOrderedItemToShoppingBasketInputDTO, ServiceShoppingBasketDTO>(
+            `${ShoppingBasketFetch.basePath}/ordered-item`,
+            { orderedItemId })
+            .then(createShoppingBasket)
+            .catch(this.httpFetchErrorHandler);
     }
 
     adjustOrderedItemInShoppingBasket(orderedItemId: string, adjustmentValue: number): Promise<ShoppingBasket> {
-        const request = () =>
-            this.httpFetch.post<AdjustingOrderedItemInShoppingBasketInputDTO, ServiceShoppingBasketDTO>(
-                `${ShoppingBasketFetch.basePath}/ordered-item/${orderedItemId}`,
-                {
-                    orderedItemId,
-                    adjustmentValue,
-                },
-            );
-
-        return this.addRequestTask<ServiceShoppingBasketDTO>(request).then(
-            serviceShoppingBasketDto => new ShoppingBasket(serviceShoppingBasketDto),
-        );
+        return this.httpFetch
+            .post<AdjustingOrderedItemInShoppingBasketInputDTO, ServiceShoppingBasketDTO>(
+            `${ShoppingBasketFetch.basePath}/ordered-item/${orderedItemId}`,
+            {
+                orderedItemId,
+                adjustmentValue,
+            })
+            .then(createShoppingBasket)
+            .catch(this.httpFetchErrorHandler);
     }
 
     removeOrderedItemFromShoppingBasket(orderedItemId: string): Promise<ShoppingBasket> {
-        const request = () =>
-            this.httpFetch.delete<RemovingOrderedItemFromShoppingBasketInputDTO, ServiceShoppingBasketDTO>(
-                `${ShoppingBasketFetch.basePath}/ordered-item/${orderedItemId}`,
-                { orderedItemId },
-            );
-
-        return this.addRequestTask<ServiceShoppingBasketDTO>(request).then(
-            serviceShoppingBasketDto => new ShoppingBasket(serviceShoppingBasketDto),
-        );
+        return this.httpFetch
+            .delete<RemovingOrderedItemFromShoppingBasketInputDTO, ServiceShoppingBasketDTO>(
+            `${ShoppingBasketFetch.basePath}/ordered-item/${orderedItemId}`,
+            { orderedItemId })
+            .then(createShoppingBasket)
+            .catch(this.httpFetchErrorHandler);
     }
 
-    private async addRequestTask<TResponse>(
-        requestTask: () => Promise<HttpFetchResponse<TResponse>>,
-    ): Promise<TResponse> {
-        try {
-            const result = await requestTask();
-            return result.data;
-        } catch (requestError) {
-            throw this.defineHttpRequestError(requestError);
-        }
+    private httpFetchErrorHandler(httpFetchError: HttpFetchResponseError<HttpFetchResponseBusinessError>): never {
+        throw this.defineHttpRequestError(httpFetchError);
     }
 }
